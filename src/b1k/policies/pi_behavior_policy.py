@@ -12,6 +12,7 @@ import numpy as np
 from typing_extensions import override
 
 from openpi.policies.policy import Policy
+from openpi.shared import array_typing as at
 from b1k.models.observation import Observation  # Use our custom Observation with FAST fields
 
 
@@ -21,6 +22,25 @@ class PiBehaviorPolicy(Policy):
     PiBehavior.sample_actions() returns (actions, subtask_logits) instead of just actions.
     This minimal subclass unpacks the tuple before output transforms are applied.
     """
+
+    def _prepare_inputs(self, obs: dict) -> dict:
+        """Apply transforms and produce the model's explicitly batched inputs."""
+        inputs = jax.tree.map(lambda x: x, obs)
+        # OmniGibson supplies one environment dimension on images/state. The
+        # task/stage pair is intentionally unbatched here as [2].
+        first_raw_image = inputs.get("observation/egocentric_camera")
+        if first_raw_image is not None and np.asarray(first_raw_image).ndim == 4:
+            inputs = jax.tree.map(
+                lambda x: np.asarray(x)[0] if np.asarray(x).ndim >= 2 else x,
+                inputs,
+            )
+        inputs = self._input_transform(inputs)
+        inputs = jax.tree.map(lambda x: jnp.asarray(x)[np.newaxis, ...], inputs)
+        if "image_mask" in inputs:
+            inputs["image_mask"] = {
+                key: np.asarray(value) for key, value in inputs["image_mask"].items()
+            }
+        return inputs
     
     @override
     def infer(self, obs: dict, *, noise: np.ndarray | None = None, initial_actions: np.ndarray | None = None) -> dict:
@@ -30,10 +50,7 @@ class PiBehaviorPolicy(Policy):
         1. Accepts initial_actions parameter for rolling inpainting
         2. Unpacks (actions, subtask_logits) tuple before output transforms
         """
-        # Reuse all parent logic for input processing
-        inputs = jax.tree.map(lambda x: x, obs)
-        inputs = self._input_transform(inputs)
-        inputs = jax.tree.map(lambda x: jnp.asarray(x)[np.newaxis, ...], inputs)
+        inputs = self._prepare_inputs(obs)
         self._rng, sample_rng = jax.random.split(self._rng)
 
         # Prepare sample_kwargs
@@ -89,7 +106,11 @@ class PiBehaviorPolicy(Policy):
                 initial_actions = initial_actions[None, ...]
             sample_kwargs["initial_actions"] = initial_actions
 
-        observation = Observation.from_dict(inputs)
+        # Observation values have already been normalized above. The installed
+        # jaxtyping/beartype versions disagree on NumPy/JAX array protocols, so
+        # skip only this redundant runtime annotation check at the boundary.
+        with at.disable_typechecking():
+            observation = Observation.from_dict(inputs)
         start_time = time.monotonic()
         
         # ONLY DIFFERENCE: Unpack tuple return from PiBehavior.sample_actions

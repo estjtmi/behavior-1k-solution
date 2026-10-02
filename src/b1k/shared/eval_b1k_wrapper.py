@@ -18,6 +18,20 @@ logger = logging.getLogger(__name__)
 RESIZE_SIZE = 224
 
 
+def _state_for_correction_rules(raw_state) -> np.ndarray | None:
+    """Return one 23-D state vector, or None for malformed optional inputs."""
+    state = np.asarray(extract_state_from_proprio(raw_state))
+    if state.ndim == 2:
+        if state.shape[0] != 1:
+            logger.warning("Skipping correction rules for state shape %s", state.shape)
+            return None
+        state = state[0]
+    if state.ndim != 1 or state.shape[0] != 23:
+        logger.warning("Skipping correction rules for state shape %s", state.shape)
+        return None
+    return state
+
+
 @dataclasses.dataclass
 class B1KWrapperConfig:
     """Configuration for B1K policy wrapper execution parameters."""
@@ -196,7 +210,7 @@ class B1KPolicyWrapper():
             self._handle_task_change(new_task_id)
         
         raw_state = obs["robot_r1::proprio"]
-        current_state = extract_state_from_proprio(raw_state)
+        current_state = _state_for_correction_rules(raw_state)
         
         # Check if we need new actions
         if self.last_actions is None or self.action_index >= self.config.execute_in_n_steps:
@@ -206,7 +220,8 @@ class B1KPolicyWrapper():
             model_input = self.prepare_batch_for_pi_behavior(model_input)
             
             # Add rolling inpainting if available
-            if self.next_initial_actions is not None and ("initial_actions" not in model_input or model_input["initial_actions"] is None):
+            if (self.next_initial_actions is not None and current_state is not None
+                    and ("initial_actions" not in model_input or model_input["initial_actions"] is None)):
                 model_input["initial_actions"] = self.next_initial_actions
             
             # Get prediction
@@ -227,7 +242,7 @@ class B1KPolicyWrapper():
             should_compress = self.config.execute_in_n_steps < self.config.actions_to_execute
             
             if self.config.apply_eval_tricks:
-                if self.task_id is not None:
+                if self.task_id is not None and current_state is not None:
                     actions_before = actions.copy()
                     actions, corrected_stage = apply_correction_rules(
                         self.task_id, self.current_stage, current_state, actions
@@ -244,6 +259,9 @@ class B1KPolicyWrapper():
                         max_diff = np.max(np.abs(actions_before - actions))
                         logger.info(f"🔧 Correction rule: Actions modified (max diff: {max_diff:.4f}, task {self.task_id}, stage {self.current_stage})")
                 
+                elif self.task_id is not None:
+                    logger.warning("Skipping state-dependent correction rules for malformed proprio state")
+
                 if should_compress:
                     has_high_variation, mean_var, max_var = check_gripper_variation(
                         actions, self.config.actions_to_execute
@@ -304,4 +322,3 @@ class B1KPolicyWrapper():
             action_tensor = action_tensor[:23]
         
         return action_tensor
-

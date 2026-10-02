@@ -48,8 +48,12 @@ def create_trained_policy(
     # JAX model loading - load directly as bfloat16 to save memory (12GB vs 24GB)
     model = train_config.model.load(_model.restore_params(checkpoint_dir / "params", dtype=jnp.bfloat16))
     
-    # Get data config
-    data_config = train_config.data.create(train_config.assets_dirs, train_config.model)
+    # Build transforms from the checkpoint's bundled assets. This is critical
+    # for the final checkpoint: its norm stats and FAST tokenizer must match
+    # the restored parameters, rather than silently falling back to a stale
+    # training-output asset directory.
+    checkpoint_assets_dir = checkpoint_dir / "assets"
+    data_config = train_config.data.create(checkpoint_assets_dir, train_config.model)
     
     # Load norm stats if not provided
     if norm_stats is None:
@@ -116,4 +120,3 @@ def create_trained_policy(
             is_pytorch=is_pytorch,
             pytorch_device=pytorch_device if is_pytorch else "cpu",
         )
-

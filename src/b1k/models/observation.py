@@ -29,7 +29,6 @@ IMAGE_KEYS = (
 IMAGE_RESOLUTION = (224, 224)
 
 
-@at.typecheck
 @struct.dataclass
 class Observation(Generic[ArrayT]):
     """Observation with FAST auxiliary fields."""
@@ -140,4 +139,3 @@ def preprocess_observation(
         fast_tokens=getattr(observation, 'fast_tokens', None),
         fast_token_mask=getattr(observation, 'fast_token_mask', None),
     )
-
