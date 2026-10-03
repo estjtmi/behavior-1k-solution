@@ -1,0 +1,6 @@
+We're going to eval our trained pi0.5 policies for behavior challenge. The trained policy is in [https://huggingface.co/estjtmi/behavior-2026-five-winner-ckpt3-10k](https://huggingface.co/estjtmi/behavior-2026-five-winner-ckpt3-10k). The code I used for training is in [https://github.com/estjtmi/behavior-1k-solution](https://github.com/estjtmi/behavior-1k-solution). The eval envs is in [https://github.com/StanfordVL/BEHAVIOR-1K](https://github.com/StanfordVL/BEHAVIOR-1K). The tasks that this policy was trained for are
+ 4 can_meat
+ 27 sorting_household_items
+ 31 clean_boxing_gloves
+ 32 wash_a_baseball_cap
+ 35 attach_a_camera_to_a_tripod. Please eval one by one. The installation of behavior challenge env can be found [https://behavior.stanford.edu/getting_started/installation.html](https://behavior.stanford.edu/getting_started/installation.html).
