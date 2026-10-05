@@ -82,5 +82,19 @@
     "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_302_0.mp4",
     "bytes": 59014371,
     "sha256": "78846ed166b51bdd1ac97c0b8ca6b6f36c530a37c972ba65b6755804de99973d"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-2/json/sorting_household_items_303_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_303_0.mp4",
+    "bytes": 60185808,
+    "sha256": "73ad43d2997c46385c0c17ebb55f2bfa513ebc6ce8e512d05d34a02599556487"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-3/json/sorting_household_items_304_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_304_0.mp4",
+    "bytes": 55590139,
+    "sha256": "89b19e423dd9f1ca98f1e743e936830b1dc39ea1092f3a914fe95f88bf42d1ec"
   }
 ]
