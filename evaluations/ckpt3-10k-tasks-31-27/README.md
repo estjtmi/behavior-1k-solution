@@ -1,6 +1,6 @@
 # Checkpoint evaluation: tasks 31 and 27
 
-Status: setup in progress; no evaluation scores yet.
+Status: setup complete; task 31 first public instance restarted after a dependency repair. No completed episode scores yet.
 
 Policy: `estjtmi/behavior-2026-five-winner-ckpt3-10k`, revision `674056b95708df9d7a9e47faef84c9187f5014d0`.
 
@@ -11,3 +11,7 @@ The simulator uses BEHAVIOR-1K `v3.9.3-post1` (`bd049de31`). The policy retains 
 The official RGB+depth full-resolution observation wrapper is used; the policy consumes RGB resized to 224×224 and its original proprioception inputs. The original action interpolation, rolling inpainting, stage voting, and correction rules remain enabled.
 
 Results must distinguish simulation/setup failures from completed episodes; failures are not counted as policy successes or silently scored as zero.
+
+## Startup failure and repair
+
+The first attempt failed before policy rollouts because Isaac Sim installation replaced `websockets` with version 12.0, while the 2026 evaluator imports `websockets.asyncio.server` and requires version 15 or newer. The resulting import exception was followed by a segmentation fault during simulator shutdown. Installed `websockets==15.0.1`, verified the evaluator policy import, and added this import to the supervisor preflight check. The retry started at 2026-10-05 02:54:44 UTC.
