@@ -36,6 +36,10 @@ class Eval2026Adapter:
     def act(self, obs):
         obs = dict(obs)
         state = np.asarray(obs['robot_r1::proprio'])
+        batched = state.ndim == 2 and state.shape[0] == 1
+        if batched:
+            obs = {k: np.asarray(v)[0] if isinstance(v, np.ndarray) and v.ndim > 0 and v.shape[0] == 1 else v for k, v in obs.items()}
+            state = np.asarray(obs['robot_r1::proprio'])
         if state.shape != (sum(n for _,n in FEATURES),):
             raise ValueError(f'Expected single-env 2026 proprio, got {state.shape}')
         expanded = np.zeros(256, dtype=state.dtype)
@@ -52,7 +56,8 @@ class Eval2026Adapter:
             logging.info('Evaluator task id=%s; checkpoint task id=%s', obs.get('task_id'), self.task_id)
             self.logged = True
         obs['task_id'] = np.array([self.task_id], dtype=np.int64)
-        return self.policy.act(obs)
+        action = self.policy.act(obs)
+        return action.reshape(1, -1) if batched else action
 
 
 def main():
