@@ -1,5 +1,5 @@
 {
-  "status": "failed",
-  "detail": "Supervisor stopped at line 35 with exit 139; inspect supervisor.log and evaluation logs",
-  "updated_utc": "2026-10-05T01:20:40.331003+00:00"
+  "status": "evaluating",
+  "detail": "Task 31 followed by task 27, public indices 0-9 each",
+  "updated_utc": "2026-10-05T02:54:14.193921+00:00"
 }
