@@ -1,0 +1,15 @@
+# Rollout videos
+
+Finalized videos are stored as [GitHub release assets](https://github.com/estjtmi/behavior-1k-solution/releases/tag/eval-ckpt3-10k-tasks-31-27-20261005).
+
+- [clean_boxing_gloves_301_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_301_0.mp4) — [JSON](results/clean_boxing_gloves/instance-0/json/clean_boxing_gloves_301_0.json)
+- [clean_boxing_gloves_302_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_302_0.mp4) — [JSON](results/clean_boxing_gloves/instance-1/json/clean_boxing_gloves_302_0.json)
+- [clean_boxing_gloves_303_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_303_0.mp4) — [JSON](results/clean_boxing_gloves/instance-2/json/clean_boxing_gloves_303_0.json)
+- [clean_boxing_gloves_304_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_304_0.mp4) — [JSON](results/clean_boxing_gloves/instance-3/json/clean_boxing_gloves_304_0.json)
+- [clean_boxing_gloves_305_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_305_0.mp4) — [JSON](results/clean_boxing_gloves/instance-4/json/clean_boxing_gloves_305_0.json)
+- [clean_boxing_gloves_306_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_306_0.mp4) — [JSON](results/clean_boxing_gloves/instance-5/json/clean_boxing_gloves_306_0.json)
+- [clean_boxing_gloves_307_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_307_0.mp4) — [JSON](results/clean_boxing_gloves/instance-6/json/clean_boxing_gloves_307_0.json)
+- [clean_boxing_gloves_308_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_308_0.mp4) — [JSON](results/clean_boxing_gloves/instance-7/json/clean_boxing_gloves_308_0.json)
+- [clean_boxing_gloves_309_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_309_0.mp4) — [JSON](results/clean_boxing_gloves/instance-8/json/clean_boxing_gloves_309_0.json)
+- [clean_boxing_gloves_310_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/clean_boxing_gloves_310_0.mp4) — [JSON](results/clean_boxing_gloves/instance-9/json/clean_boxing_gloves_310_0.json)
+- [sorting_household_items_301_0](https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_301_0.mp4) — [JSON](results/sorting_household_items/instance-0/json/sorting_household_items_301_0.json)
