@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-05T15:55:03.988647+00:00",
-  "completed_result_files": 12,
+  "updated_utc": "2026-10-05T18:33:34.506222+00:00",
+  "completed_result_files": 14,
   "tasks": {
     "clean_boxing_gloves": {
       "completed": 10,
@@ -8,9 +8,9 @@
       "mean_q_score": 0.15
     },
     "sorting_household_items": {
-      "completed": 2,
+      "completed": 4,
       "successes": 0,
-      "mean_q_score": 0.3125
+      "mean_q_score": 0.21875
     }
   }
 }
