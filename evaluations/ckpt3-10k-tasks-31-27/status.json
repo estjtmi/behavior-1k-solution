@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "detail": "Supervisor stopped at line 35 with exit 139; inspect supervisor.log and evaluation logs",
+  "updated_utc": "2026-10-05T01:20:40.331003+00:00"
+}
