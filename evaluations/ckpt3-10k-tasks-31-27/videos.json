@@ -96,5 +96,33 @@
     "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_304_0.mp4",
     "bytes": 55590139,
     "sha256": "89b19e423dd9f1ca98f1e743e936830b1dc39ea1092f3a914fe95f88bf42d1ec"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-4/json/sorting_household_items_305_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_305_0.mp4",
+    "bytes": 67449645,
+    "sha256": "b1aa2520e1b03966136238e8a82d9731acbcdc50c9068507ce0cdcc8e0341079"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-5/json/sorting_household_items_306_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_306_0.mp4",
+    "bytes": 63259231,
+    "sha256": "b896464e676a72278665fd9eeb0c92ee1404bd1d2a5ce15541ecd190e16c1682"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-6/json/sorting_household_items_307_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_307_0.mp4",
+    "bytes": 55263557,
+    "sha256": "783989201a2c3a6732f36ff8e4907bcdfe568f1960071811c6f804f1f553b109"
+  },
+  {
+    "task": "sorting_household_items",
+    "json": "results/sorting_household_items/instance-7/json/sorting_household_items_308_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_308_0.mp4",
+    "bytes": 56893901,
+    "sha256": "22724b281e0e1992c1289aff7614b88041c59c1adb830b473c9071a2df67b371"
   }
 ]
