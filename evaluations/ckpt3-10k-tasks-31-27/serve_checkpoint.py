@@ -63,7 +63,7 @@ class Eval2026Adapter:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--checkpoint', required=True)
-    parser.add_argument('--task-id', type=int, choices=[31,27], required=True)
+    parser.add_argument('--task-id', type=int, choices=[31,27,32], required=True)
     parser.add_argument('--port', type=int, default=8000)
     args = parser.parse_args()
     original = config.get_config('pi_behavior_b1k_fast')
