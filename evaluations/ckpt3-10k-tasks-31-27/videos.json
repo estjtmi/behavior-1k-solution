@@ -138,5 +138,75 @@
     "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/sorting_household_items_310_0.mp4",
     "bytes": 46293811,
     "sha256": "864459fd37de98c3436255e8c02e3c3ee202497612b095a214e9e0495dd0c577"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_301_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_301_0.mp4",
+    "bytes": 23841032,
+    "sha256": "d1d798a715e95b86cd21d1f0f4f9fd9056bb825cf86a57d165b6705ca0dec4e6"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_302_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_302_0.mp4",
+    "bytes": 24229660,
+    "sha256": "287258dcd04f7ef2ab9d87feb9616cd351c4c5d195858b700349b22fb0a927aa"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_303_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_303_0.mp4",
+    "bytes": 12917873,
+    "sha256": "9ceb92b7f47e1825827f9ec6aaca11eb04b07a824ed177b188a76d35e7f9e19b"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_304_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_304_0.mp4",
+    "bytes": 14081345,
+    "sha256": "a23167f93bb5ffa7a5ff48143f800d1069d2b26a0df523911dff56e2710e6ea2"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_305_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_305_0.mp4",
+    "bytes": 27412569,
+    "sha256": "e72bc46f6ceaa0f0012fcc2eb5650fea87548264b6a7eea7958f373dde55c7a1"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_306_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_306_0.mp4",
+    "bytes": 34227085,
+    "sha256": "61df8d4183c88a9226a6671560b552f4e20063b68877dce3a1e19403417c9df3"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_307_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_307_0.mp4",
+    "bytes": 25301391,
+    "sha256": "c44c8a118ab70b4ccfddc1b5b8eaf58fbd55069da9db1d5ec9c0201a2734eb54"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_308_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_308_0.mp4",
+    "bytes": 21395563,
+    "sha256": "c742244ce636045b3b12ba5c793215188011ff8ac2d468509d5514bf6752bf23"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_309_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_309_0.mp4",
+    "bytes": 25457580,
+    "sha256": "1e52a69971b5b90ca28c4a92a1a45c51c8758b788b8ce689ef27a8dd26eefb1e"
+  },
+  {
+    "task": "wash_a_baseball_cap",
+    "json": "results/wash_a_baseball_cap/instance-batch/json/wash_a_baseball_cap_310_0.json",
+    "video": "https://github.com/estjtmi/behavior-1k-solution/releases/download/eval-ckpt3-10k-tasks-31-27-20261005/wash_a_baseball_cap_310_0.mp4",
+    "bytes": 21144125,
+    "sha256": "5175e54ab75c22e92798d6bb3916344113f5928148a1a6a752a09f62c91d9907"
   }
 ]
